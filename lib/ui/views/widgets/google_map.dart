@@ -20,6 +20,7 @@ class GoogleMapWidget extends StatefulWidget {
 class GoogleMapWidgetState extends State<GoogleMapWidget> {
   @override
   void initState() {
+    context.read<LocationBloc>().add(GetCurrentLocation());
     Timer.periodic(const Duration(seconds: 10), (timer) {
       context.read<LocationBloc>().add(GetCurrentLocation());
     });
