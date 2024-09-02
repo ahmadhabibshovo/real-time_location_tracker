@@ -27,6 +27,7 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
       body: BlocBuilder<LocationBloc, LocationState>(
         builder: (context, state) {
           if (state.locationPermissionStatus == LocationPermission.granted) {
+            Future.delayed(const Duration(seconds: 1));
             return const LocationTracker();
           } else if (state.locationPermissionStatus ==
               LocationPermission.denied) {
